@@ -1,16 +1,78 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+li {
+    border: none;
+}
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    background-color: white;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
+@layer components {
+    .leaderboard-card {
+        @apply w-full flex items-center rounded-lg drop-shadow-md md:mx-auto my-2 bg-white py-3 px-5 transition-all cursor-pointer;
+        background: linear-gradient(-90deg, white 90%, transparent), url(/dotgrid.svg), white;
+        background-repeat: no-repeat;
+    }
+    .leaderboard-card .address:hover {
+        @apply transition-all;
+        filter: brightness(0.9);
+    }
+    .leaderboard-card:hover {
+        transform: scale(1.05);
+    }
+    .leaderboard-card.top-1 {
+        background: linear-gradient(53.02deg, #000000b5 -0.71%, #979797 39.14%, #000000 88.06%), url(/dotgrid.svg), linear-gradient(53.02deg, #000000 -0.71%, #979797 39.14%, #000000 88.06%), #D9D9D9;
+        background-repeat: no-repeat;
+    }
+    .leaderboard-card.top-1 * {
+        color: white;
+    }
+    .leaderboard-card.top-2 {
+        background: linear-gradient(90deg, #f7991f54, #fbe332 30%, #ffb400 40%, #ffb400 50%, #ffb400 60%, #f7991f), url(/dotgrid.svg), linear-gradient(90deg, #fbe332, #f7991f);
+        background-repeat: no-repeat;
+    }
+    .leaderboard-card.top-2 * {
+        color: brown;
+    }
+    .leaderboard-card.top-3 {
+        background: linear-gradient(90.02deg, transparent 0%, #ffffff 50.14%, #bbbbbb 60.14%, #ffffff 88.06%), url(/dotgrid.svg), linear-gradient(53.02deg, #ffffff -0.71%, #979797 39.14%, #ffffff 88.06%), #D9D9D9;
+        background-repeat: no-repeat;
+    }
+    .leaderboard-card.top-3 * {
+        color: #000;
+    }
+    .gradient-box {
+        @apply flex items-center justify-center text-4xl text-white font-extrabold;
+        background-image: linear-gradient(90deg, #fbe332, #f7991f);
+        border-radius: 3px;
+    }
+    .gradient-box.top-1 {
+        background: linear-gradient(53.02deg, #000000b5 -0.71%, #979797 39.14%, #000000 88.06%), linear-gradient(53.02deg, #000000 -0.71%, #979797 39.14%, #000000 88.06%), #D9D9D9;
+    }
+    .gradient-box.top-3 {
+        color: #000;
+        background: linear-gradient(90.02deg, transparent 0%, #ffffff 50.14%, #bbbbbb 60.14%, #ffffff 88.06%), linear-gradient(53.02deg, #ffffff -0.71%, #979797 39.14%, #ffffff 88.06%), #D9D9D9;
+    }
+    .week-container {
+        @apply flex md:justify-center items-center mb-3 mt-6 md:overflow-hidden overflow-scroll;
+    }
+    .week {
+        @apply flex justify-center items-center font-normal text-lg px-3 min-w-fit cursor-pointer;
+    }
+    .week.active {
+        border-radius: 7px;
+        padding: 3px 14px;
+        font-weight: 500;
+        color: #000;
+        background: orange;
+        background-repeat: no-repeat;
+    }
+    @media screen and (max-width: 768px) {
+        .leaderboard-card {
+            width: calc(100% - 20px);
+        }
+    }
 }
