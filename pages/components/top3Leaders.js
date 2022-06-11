@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export default function Top3Leaders({ list }) {
+export default function Top3Leaders({ list = [{},{},{}] }) {
   const avatarSize = 90
   return (
     <div className="top-3-leaders flex mx-auto justify-center">

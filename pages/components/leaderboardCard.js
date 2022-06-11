@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function LeaderboardCard({
   name,
   rank,
-  address,
+  address = "",
   joinDate,
   avatar,
   total,
