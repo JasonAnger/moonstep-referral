@@ -27,7 +27,7 @@ export default function LeaderboardCard({
         {rankComponent}
     </div>
     <div className="avatar flex mx-3 min-w-fit w-20">
-      <Image className="rounded-full" src={avatar} alt={address+" avatar"} height={avatarSize} width={avatarSize}/>
+      <Image className="rounded-full" src={'https://i.pinimg.com/564x/c4/65/7b/c4657be2b28a02cac60512ad2a746077.jpg'} alt={address+" avatar"} height={avatarSize} width={avatarSize}/>
     </div>
     <div className="w-full">
         <div className="name font-bold text-xl">{name}</div>

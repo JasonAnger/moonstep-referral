@@ -57,18 +57,39 @@ body {
         background: linear-gradient(90.02deg, transparent 0%, #ffffff 50.14%, #bbbbbb 60.14%, #ffffff 88.06%), linear-gradient(53.02deg, #ffffff -0.71%, #979797 39.14%, #ffffff 88.06%), #D9D9D9;
     }
     .week-container {
-        @apply flex md:justify-center items-center mb-3 mt-6 md:overflow-hidden overflow-scroll;
+        @apply flex md:justify-center items-center mb-3 mt-6 py-3 md:overflow-visible overflow-scroll;
     }
     .week {
-        @apply flex justify-center items-center font-normal text-lg px-3 min-w-fit cursor-pointer;
+        @apply flex justify-center items-center font-normal text-lg px-3 min-w-fit cursor-pointer transition-all;
+    }
+    .week:hover {
+        background: #ffa50080;
+        box-shadow: 0px 0px 3px 2px #ffa50087;
+        border-radius: 7px;
+        padding: 3px 14px;
+        transform: scale(1.05);
+        z-index: 100;
     }
     .week.active {
         border-radius: 7px;
         padding: 3px 14px;
         font-weight: 500;
-        color: #000;
+        color: #fff;
         background: orange;
         background-repeat: no-repeat;
+    }
+    ul.pagination .disabled{
+        opacity: 0.4;
+    }
+    ul.pagination .selected {
+        border-radius: 6px;
+        background-color: orange;
+        width: 30px;
+        text-align: center;
+        padding: 5px;
+    }
+    ul.pagination .selected a {
+        color: white;
     }
     @media screen and (max-width: 768px) {
         .leaderboard-card {
