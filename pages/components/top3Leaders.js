@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import images from "./images/index"
 
 export default function Top3Leaders({ list = [{},{},{}] }) {
   const avatarSize = 90
@@ -8,7 +9,7 @@ export default function Top3Leaders({ list = [{},{},{}] }) {
         <div>
           <Image
             className="rounded-full"
-            src={'https://i.pinimg.com/564x/c4/65/7b/c4657be2b28a02cac60512ad2a746077.jpg'}
+            src={images[list[1].avatar]}
             alt={list[1].address + ' avatar'}
             height={avatarSize}
             width={avatarSize}
@@ -30,7 +31,7 @@ export default function Top3Leaders({ list = [{},{},{}] }) {
         <div>
           <Image
             className="rounded-full"
-            src={'https://i.pinimg.com/564x/c4/65/7b/c4657be2b28a02cac60512ad2a746077.jpg'}
+            src={images[list[0].avatar]}
             alt={list[0].address + ' avatar'}
             height={avatarSize}
             width={avatarSize}
@@ -52,7 +53,7 @@ export default function Top3Leaders({ list = [{},{},{}] }) {
         <div>
           <Image
             className="rounded-full"
-            src={'https://i.pinimg.com/564x/c4/65/7b/c4657be2b28a02cac60512ad2a746077.jpg'}
+            src={images[list[2].avatar]}
             alt={list[2].address + ' avatar'}
             height={avatarSize}
             width={avatarSize}

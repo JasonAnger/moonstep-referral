@@ -1,5 +1,5 @@
 import { useState } from "react"
-export default function Header() {
+export default function Header({onClickSearch}) {
     const [isOpenNavbar, setIsOpenNavbar] = useState(false)
     return (
         <header className="aux-elementor-header" id="site-elementor-header" data-sticky-height="80">
@@ -99,9 +99,13 @@ export default function Header() {
                                                                     <span className="aux-menu-label">Privacy Policy</span>
                                                                 </a>
                                                             </li>
+                                                            <li id="menu-item-1348"
+                                                                className="menu-item menu-item-type-custom menu-item-object-custom menu-item-1348 aux-menu-depth-0 aux-menu-root-5 aux-menu-item">
+                                                                    <button onClick={() => onClickSearch()} className="rounded-full week active ml-8 h-10 -mt-2"><i className="fas fa-search text-white"></i> <span className="ml-3">Find yourself</span></button>
+                                                            </li>
                                                         </ul>
                                                     </nav>
-                                                    <div className="aux-toggle-menu-bar" style={isOpenNavbar ? { height: "auto" } : { height: "0px" }}>
+                                                    <div className={isOpenNavbar ? "aux-toggle-menu-bar active" : "aux-toggle-menu-bar"}style={isOpenNavbar ? { height: "auto", position: 'absolute' } : { height: "0px" }}>
                                                         <ul id="menu-header-menu" className="aux-master-menu aux-skin-classic aux-toggle aux-narrow" data-type="horizontal"
                                                             data-switch-type="toggle" data-switch-parent=".elementor-element-d052931 .aux-toggle-menu-bar"
                                                             data-switch-width="767">
@@ -134,6 +138,10 @@ export default function Header() {
                                                                 <a href="https://privacy.moonstep.app/" className="aux-item-content">
                                                                     <span className="aux-menu-label">Privacy Policy</span>
                                                                 </a>
+                                                            </li>
+                                                            <li id="menu-item-1348"
+                                                                className="menu-item menu-item-type-custom menu-item-object-custom menu-item-1348 aux-menu-depth-0 aux-menu-root-5 aux-menu-item">
+                                                                <button onClick={() => onClickSearch()} className="rounded-full week active h-10 -mt-2"><i className="fas fa-search text-white"></i> <span className="ml-3">Find yourself</span></button>
                                                             </li>
                                                         </ul>
                                                     </div>

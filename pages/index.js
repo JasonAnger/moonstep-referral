@@ -16,77 +16,60 @@ export async function getStaticProps(context) {
   return {
     props: {
       total: referrals.totalPages,
-      content: referrals.content.concat(referrals.content)
+      // content: referrals.content.concat(referrals.content)
     }, // will be passed to the page component as props
   }
 }
 
-export default function Home({total, content =  [
-  {
-    name: 'Mario',
-    avatar:
-      'https://i.pinimg.com/564x/c4/65/7b/c4657be2b28a02cac60512ad2a746077.jpg',
-    walletAddress:
-      'd7ef0a04f3c8055644677299a9414a75adcb15916eb48417416c9317ace2ff4f',
-    joinedDate: '2022-06-11T12:44:31.871Z',
-    totalAcceptedReferrals: 1000,
-  },
-  {
-    name: 'Mario',
-    avatar:
-      'https://i.pinimg.com/564x/c4/65/7b/c4657be2b28a02cac60512ad2a746077.jpg',
-    walletAddress:
-      'd7ef0a04f3c8055644677299a9414a75adcb15916eb48417416c9317ace2ff4f',
-    joinedDate: '2022-06-11T12:44:31.871Z',
-    totalAcceptedReferrals: 1000,
-  },
-  {
-    name: 'Mario',
-    avatar:
-      'https://i.pinimg.com/564x/c4/65/7b/c4657be2b28a02cac60512ad2a746077.jpg',
-    walletAddress:
-      'd7ef0a04f3c8055644677299a9414a75adcb15916eb48417416c9317ace2ff4f',
-    joinedDate: '2022-06-11T12:44:31.871Z',
-    totalAcceptedReferrals: 1000,
-  },
-  {
-    name: 'Mario',
-    avatar:
-      'https://i.pinimg.com/564x/c4/65/7b/c4657be2b28a02cac60512ad2a746077.jpg',
-    walletAddress:
-      'd7ef0a04f3c8055644677299a9414a75adcb15916eb48417416c9317ace2ff4f',
-    joinedDate: '2022-06-11T12:44:31.871Z',
-    totalAcceptedReferrals: 1000,
-  },
-  {
-    name: 'Mario',
-    avatar:
-      'https://i.pinimg.com/564x/c4/65/7b/c4657be2b28a02cac60512ad2a746077.jpg',
-    walletAddress:
-      'd7ef0a04f3c8055644677299a9414a75adcb15916eb48417416c9317ace2ff4f',
-    joinedDate: '2022-06-11T12:44:31.871Z',
-    totalAcceptedReferrals: 1000,
-  },
-  {
-    name: 'Mario',
-    avatar:
-      'https://i.pinimg.com/564x/c4/65/7b/c4657be2b28a02cac60512ad2a746077.jpg',
-    walletAddress:
-      'd7ef0a04f3c8055644677299a9414a75adcb15916eb48417416c9317ace2ff4f',
-    joinedDate: '2022-06-11T12:44:31.871Z',
-    totalAcceptedReferrals: 1000,
-  },
-  {
-    name: 'Mario',
-    avatar:
-      'https://i.pinimg.com/564x/c4/65/7b/c4657be2b28a02cac60512ad2a746077.jpg',
-    walletAddress:
-      'd7ef0a04f3c8055644677299a9414a75adcb15916eb48417416c9317ace2ff4f',
-    joinedDate: '2022-06-11T12:44:31.871Z',
-    totalAcceptedReferrals: 1000,
-  },
-]}) {
-  const [usedList, setUsedList] = useState(content)
+export default function Home(
+  {total, content}) {
+  const [usedList, setUsedList] = useState([
+    {
+      name: 'Mario',
+      avatar:
+        'avatar1',
+      walletAddress:
+        'd7ef0a04f3c8055644677299a9414a75adcb15916eb48417416c9317ace2ff4f',
+      joinedDate: '2022-06-11T12:44:31.871Z',
+      totalAcceptedReferrals: 1000,
+    },
+    {
+      name: 'Mario',
+      avatar:
+      'avatar11',
+      walletAddress:
+        'd7ef0a04f3c8055644677299a9414a75adcb15916eb48417416c9317ace2ff4f',
+      joinedDate: '2022-06-11T12:44:31.871Z',
+      totalAcceptedReferrals: 1000,
+    },
+    {
+      name: 'Mario',
+      avatar:
+      'avatar2',
+      walletAddress:
+        'd7ef0a04f3c8055644677299a9414a75adcb15916eb48417416c9317ace2ff4f',
+      joinedDate: '2022-06-11T12:44:31.871Z',
+      totalAcceptedReferrals: 1000,
+    },
+    {
+      name: 'Mario',
+      avatar:
+        'avatar1',
+      walletAddress:
+        'd7ef0a04f3c8055644677299a9414a75adcb15916eb48417416c9317ace2ff4f',
+      joinedDate: '2022-06-11T12:44:31.871Z',
+      totalAcceptedReferrals: 1000,
+    },
+    {
+      name: 'Mario',
+      avatar:
+      'avatar11',
+      walletAddress:
+        'd7ef0a04f3c8055644677299a9414a75adcb15916eb48417416c9317ace2ff4f',
+      joinedDate: '2022-06-11T12:44:31.871Z',
+      totalAcceptedReferrals: 1000,
+    },
+  ])
   function getWeekOfYear() {
     const now = new Date()
     const start = new Date(now.getFullYear(), 0, 0)
@@ -99,12 +82,19 @@ export default function Home({total, content =  [
 
   }
   const [activeWeek, setActiveWeek] = useState(0)
+  const [isSearching, setIsSearching] = useState(false)
   const weekNow = getWeekOfYear()
   const yearNow = new Date().getFullYear()
+  function openSearch() {
+    setIsSearching(true)
+  }
+  function closeSearch() {
+    setIsSearching(false)
+  }
   return (
     <>
-      <Header />
-      <div>
+      <div className='block overflow-hidden'>
+        <Header onClickSearch={openSearch} />
         <Head>
           <title>Moon Step - From Health to Wealth!</title>
           <meta

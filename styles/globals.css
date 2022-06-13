@@ -95,5 +95,27 @@ body {
         .leaderboard-card {
             width: calc(100% - 20px);
         }
+        .aux-elementor-header-menu.aux-nav-menu-element.aux-nav-menu-element-d052931 {
+            width: 28px !important;
+        }
+        .aux-toggle-menu-bar {
+            @apply transition-all;
+            height: 100vh !important;
+            position: fixed;
+            opacity: 0;
+            left: 200vw;
+            width: 100vw;
+            padding: 0px 0px 0px 30px;
+            background-color: #fff;
+        }
+        .aux-toggle-menu-bar.active {
+            height: 100vh !important;
+            position: fixed;
+            opacity: 1;
+            left: -50vw;
+            width: 100vw;
+            padding: 0px 0px 0px 30px;
+            background-color: #fff;
+        }
     }
 }
